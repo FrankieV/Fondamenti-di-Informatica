@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1394033220 source:c:\users\frankv\desktop\frazione\frazione.cpp
+	"Frazione.h"
+
+1394032442 c:\users\frankv\desktop\frazione\frazione.h
+	<iostream>
+
+1394033054 source:c:\users\frankv\desktop\frazione\main.cpp
+	"Frazione.h"
+	<iostream>
+
