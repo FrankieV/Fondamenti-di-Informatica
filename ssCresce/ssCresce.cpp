@@ -1,8 +1,7 @@
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 
-const int dim = 10;
+const int dim = 100;
 
 void Print(int[], int, int);
 void ControllaSsequenza(int[], int);
@@ -32,7 +31,7 @@ int Leggi(int A[])
 
 void ControllaSsequenza(int A[], int dimA)
 {
-	int temp[dim];
+	int temp[dimA];
 	int indice = 0;
 	for (int i = 0; i<dimA; i++)
 	{
@@ -47,8 +46,8 @@ void ControllaSsequenza(int A[], int dimA)
 			cont++;
 		}
 
-		else
-		{
+//		else
+//		{
 			if (cont>contMax)
 			{
 				contMax = cont;
@@ -61,7 +60,6 @@ void ControllaSsequenza(int A[], int dimA)
 				cont = 0;
 			}
 		}
-	}
 	Print(temp, dimA, contMax);
 }
 
