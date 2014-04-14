@@ -4,7 +4,7 @@ using namespace std;
 int Leggi(int []);
 void ControllaSequenza(int [],int, int[]);
 
-const int n = 100;
+const int n;
 
 int main()
 {
