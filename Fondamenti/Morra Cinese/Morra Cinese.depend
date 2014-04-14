@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1384118660 source:c:\users\frank\desktop\project\morra cinese\main.cpp
-	<iostream>
-	<string>
-	<ctime>
-	<cstdlib>
-
