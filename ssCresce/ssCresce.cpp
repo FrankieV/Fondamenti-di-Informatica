@@ -1,89 +1,77 @@
+#include "stdafx.h"
 #include <iostream>
-
 using namespace std;
-int Leggi(int []);
-void ControllaSequenza(int [],int, int[]);
 
-const int n = 200;
+const int dim = 10;
+
+void Print(int[], int, int);
+void ControllaSsequenza(int[], int);
+int Leggi(int[]);
 
 int main()
 {
-    int A[n];
-    int dimA = Leggi(A);
-    int tmp[dimA];
-    int cont = 0;
-
-    for(int i = 0; i<dimA; i++)
-    {
-        tmp[i] = -1;
-    }
-
-    ControllaSequenza(A,dimA,tmp);
-
-
-    for(int i = 0; i<dimA; i++)
-    {
-        if(tmp[i] != -1)
-        {
-            cout << tmp[i];
-            cont++;
-        }
-    }
-
-    if(cont == 0)
-        cout << "Empty";
-    else
-    cout << endl << cont;
+	int A[dim];
+	int dimA = Leggi(A);
+	ControllaSsequenza(A, dimA);
+	return 0;
 }
 
-int Leggi(int V[])
+int Leggi(int A[])
 {
-    int cont = 0;
-    int seq;
-    cin >> seq;
-    while(cont < n && seq >= 0  )
-    {
-        V[cont] = seq;
-        cont++;
-        cin >> seq;
-    }
-    return cont;
-
+	int i = 0;
+	int seq;
+	cin >> seq;
+	while (i<dim - 1 && seq >= 0)
+	{
+		A[i] = seq;
+		i++;
+		cin >> seq;
+	}
+	return i;
 }
 
-void ControllaSequenza(int V[],int dim, int temp[])
+void ControllaSsequenza(int A[], int dimA)
 {
-    int cont = 1;
-    int contMax = 0;
-    bool primaVolta = true;
+	int temp[dim];
+	int indice = 0;
+	for (int i = 0; i<dimA; i++)
+	{
+		temp[i] = -1;
+	}
+	int cont = 1;
+	int contMax = 0;
+	for (int i = 0; i<dimA; i++)
+	{
+		if (A[i] <= A[i + 1])
+		{
+			cont++;
+		}
 
-    for(int i=0; i<dim; i++)
-    {
-        if(V[i] <= V[i+1])
-        {
-            cont++;
-            if(primaVolta)
-            {
-                temp[i] = V[i];
-            }
-
-        }
-        else
-        {
-            primaVolta = false;
-            if(cont > contMax)
-            {
-                int counter = 0;
-                for(int a = (i+1)-cont; a<i+1; a++)
-                {
-                    temp[counter] = V[a];
-                    counter++;
-                }
-                contMax = cont;
-            }
-
-            cont = 1;
-        }
-    }
+		else
+		{
+			if (cont>contMax)
+			{
+				contMax = cont;
+				int index = 0;
+				for (int e = (i + 1) - contMax; e<i + 1; e++)
+				{
+					temp[index] = A[e];
+					index++;
+				}
+				cont = 0;
+			}
+		}
+	}
+	Print(temp, dimA, contMax);
 }
 
+void Print(int tmp[], int dimA, int cMax)
+{
+	for (int i = 0; i<dimA; i++)
+	{
+		if (tmp[i] != -1)
+			cout << tmp[i];
+	}
+	cout << endl;
+	cout << cMax;
+}
