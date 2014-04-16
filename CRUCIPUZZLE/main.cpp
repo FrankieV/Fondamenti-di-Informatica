@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 
+//Completare i metodi posti nella funzione CercaParola();
+
 using namespace std;
 const int m = 4;
 const int n = 4;
