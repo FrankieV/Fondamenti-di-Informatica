@@ -63,7 +63,7 @@ void ControllaSsequenza(int A[], int dimA)
 					index++;
 				}
                                 cont = 1;
-	                        if(((A[i+1]==A[i+2])&&(A[i+2]>A[i+3]))||((A[i+1]<A[i+2])&& (A[i+2]>A[i+3])))
+	                        if((A[i+1]<=A[i+2])&&(A[i+2]>A[i+3]))    
                                 { 
                                   cont=0;
                                 }
