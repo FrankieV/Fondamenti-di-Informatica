@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-const int n = 8;
+const int n = 8; // Change 8 with other number. Remember: the number must be equal!!
 bool MetaUguali(int[],int,int);
 
 int main()
