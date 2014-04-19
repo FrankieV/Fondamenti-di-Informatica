@@ -2,8 +2,8 @@
 #include <cstring>
 
 using namespace std;
-const int m = 4;
-const int n = 4;
+const int m = 5;
+const int n = 5;
 
 void InsertMatrice(char[][n]);
 void CercaParola(char[][n]);
@@ -63,7 +63,7 @@ void CercaParola(char A[][n])
                 }
                 if(Est(A,i,j))
                 {
-                     cout << "Coordinate: (" << i << " " << j << ") E" << endl;
+                     cout << "Coordinate: (" << i << " "  << j << ") E" << endl;
                      entrato = true;
                 }
                 if(Ovest(A,i,j))
