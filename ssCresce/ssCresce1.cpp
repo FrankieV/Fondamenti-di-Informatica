@@ -22,53 +22,52 @@ int Leggi(int A[])
         {
          A[i]=-1;
         }
+        int dimA=0;
         int i= 0;
         cin >> seq;
-	while (i<dim-1 && seq >= 0)
+	while (seq >= 0)
 	{
 		A[i] = seq;
 		cin >> seq;
                 i++;
 	}
-        A[i++]=A[i]+1;
-        return i;
+        while (A[dimA]>=0)
+         {
+           dimA++;
+         }
+        return dimA;
 }
 
 void ControllaSsequenza(int A[], int dimA)
 {
         int temp[dim];
-	int indice = 0;
 	for (int i = 0; i<dimA; i++)
 	{
 		temp[i] = -1;
 	}
 	int cont = 1;
 	int contMax = 0;
-	for (int i = 0; A[i]>=0; i++)
+	for (int i = 0; i<dimA; i++)
 	{
               if (A[i] <= A[i + 1])
 		{
                   cont++;
 		}
 
-		else
+	      else 
 		{
-			if (cont>contMax)
+		      if (cont>contMax)
 			{
 				contMax = cont;
 				int index = 0;
-				for (int e = (i + 1) - contMax; e<i + 1; e++)
+                                for (int e = (i + 1) - contMax; e<i + 1; e++)
 				{
 					temp[index] = A[e];
 					index++;
 				}
-                                cont = 1;
-	                        if((A[i+1]<=A[i+2])&&(A[i+2]>A[i+3]))    
-                                { 
-                                  cont=0;
-                                }
 
 			}
+                       cont=1;
 		}
 	}
 	Print(temp, dimA, contMax);
