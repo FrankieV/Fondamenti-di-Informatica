@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1397984340 source:c:\users\best\desktop\c++ project\esercitazione13_01_2014 - esercizio 2\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
