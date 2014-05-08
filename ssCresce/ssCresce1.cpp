@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int dim = 100;
+const int dim = 10;
 
 void Print(int[], int, int);
 void ControllaSsequenza(int[], int);
@@ -54,7 +54,7 @@ void ControllaSsequenza(int A[], int dimA)
                   cont++;
 		}
 
-	      else 
+	      else
 		{
 		      if (cont>contMax)
 			{
