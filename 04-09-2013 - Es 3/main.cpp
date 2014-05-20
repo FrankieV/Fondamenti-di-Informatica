@@ -62,7 +62,7 @@ int main()
 					moltiplicando++;
 				}
 			}
-
+            moltiplicando = 0;
 			corrente++;
 		}
 }
