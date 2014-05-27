@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int dim = 9;
+const int dim = 99;
 
 void Print(int[], int, int);
 void ControllaSsequenza(int[], int);
@@ -37,6 +37,8 @@ void ControllaSsequenza(int A[], int dim)
     int corr = 0;
     int succ = 1;
     int cont = 1;
+    int start_index = 0;
+    int end_index = 0;
     int cont_Max = 1;
     while(succ < dim)
     {
@@ -46,20 +48,25 @@ void ControllaSsequenza(int A[], int dim)
         }
         else
         {
-            if(cont > cont_Max)
-            {
-                cont_Max = cont;
-            }
-
             cont = 1;
         }
 
-
+        if(cont > cont_Max)
+        {
+            start_index = succ-cont_Max;
+            end_index = succ;
+            cont_Max = cont;
+        }
 
         corr = succ;
         succ++;
     }
 
-    cout << endl << cont_Max;
+  for(int i= start_index; i<= end_index; i++)
+  {
+      cout << A[i];
+  }
+
+  cout << endl << cont_Max;
 }
 
