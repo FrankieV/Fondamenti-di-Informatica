@@ -69,4 +69,3 @@ void ControllaSsequenza(int A[], int dim)
 
   cout << endl << cont_Max;
 }
-
