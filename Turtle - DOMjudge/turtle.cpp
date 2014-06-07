@@ -90,7 +90,7 @@ void Leggi_Comandi(int A[], int dimA, int M[][dim])
 void Est(int M[][dim])
 {
     int passi;
-    cout << "passi? ";
+    cout<<"passi? "<<endl;
     cin >> passi;
     if(posJ != dim)
     {
@@ -124,7 +124,7 @@ void Est(int M[][dim])
 void Ovest(int M[][dim])
 {
     int passi;
-    cout << "passi? ";
+    cout<<"passi? "<<endl;
     cin >> passi;
     if(posJ != 0)
     {
@@ -158,7 +158,7 @@ void Ovest(int M[][dim])
 void Nord(int M[][dim])
 {
     int passi;
-    cout << "passi? ";
+    cout<<"passi? "<<endl;
     cin >> passi;
     if(posI != 0)
     {
@@ -192,7 +192,7 @@ void Nord(int M[][dim])
 void Sud(int M[][dim])
 {
     int passi;
-    cout << "passi? ";
+    cout<<"passi? "<<endl;
     cin >> passi;
     if(posI != dim)
     {
@@ -225,18 +225,15 @@ void Sud(int M[][dim])
 
 void visualizzaPavimento(int M[][dim])
 {
-    for(int i = 0; i < dim; i++)
+    unsigned i,j;
+    for(i = 0; i < dim; i++)
     {
-        for(int j= 0; j<dim; j++)
-        {
+        for(j= 0; j<dim; j++)
             if(M[i][j] == 1)
-            {
                 cout << "*";
-            }
             else
                 cout << " ";
-        }
-
         cout << endl;
     }
+
 }

@@ -32,6 +32,7 @@ void insert_Number(int M[][dim])
     while(dim*dim-num_inseriti > 0)
     {
         stampa_Griglia(M);
+        cout << endl;
         int seq, i, j = 0;
         int riga, colonna = -1;
         cout << "Ti restano da riempire " << dim*dim-num_inseriti << " celle" << endl;
@@ -69,6 +70,8 @@ void insert_Number(int M[][dim])
         riga = -1;
         colonna = -1;
     }
+
+    stampa_Griglia(M);
 }
 
 int Controlla_Riga(int M[][dim], int seq, int posI, int posJ)
