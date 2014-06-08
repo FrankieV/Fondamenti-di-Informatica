@@ -23,17 +23,17 @@ void scansiona_array( int A[], int dim)
 	int cont = 0;
 	for( int i = 0; i < dim && A[i] != -1; i++)
 		{
-			 while ( A[i] != 2 && A[i] != -1)
-						{
-						 cout << A[i] << " ";
-	                	 i++;
-						}
-				  cout << endl;
+			while ( A[i] != 2 && A[i] != -1)
+				{
+					cout << A[i] << " ";
+					i++;
+				}
+			cout << endl;
 		}
 	for( int i = 0; i < dim; i++)
 		{
 			if( A[i] == 2)
-				cout << i << " ";
+			cout << i << " ";
 		}
 }
 
