@@ -33,7 +33,7 @@ int Leggi(int A[])
     return cont;
 }
 
-int Occorrenze(int A[],int dimA,int x, int C)
+/*int Occorrenze(int A[],int dimA,int x, int C)
 {
     int cont = 0;
     while(x != 0)
@@ -52,4 +52,4 @@ int Occorrenze(int A[],int dimA,int x, int C)
 
     return C;
 
-}
+}*/                 RIFARE /!\
