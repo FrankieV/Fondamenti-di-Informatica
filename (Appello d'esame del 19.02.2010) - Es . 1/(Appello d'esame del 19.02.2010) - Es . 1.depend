@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1402181974 source:c:\users\frankv\desktop\project\(appello d'esame del 19.02.2010) - es . 1\main.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+	<cstdlib>
+

@@ -8,6 +8,7 @@ int main()
 {
     const int dim = 20;
     char A[dim];
+    char F[];
 
     cin.getline(A,dim);
 
