@@ -4,8 +4,7 @@ using namespace std;
 
 int main()
 {
-   char a = 102;
-   cout << a;
 
-
+    if((char)0 == 'a')
+        cout <<  "ok";
 }
