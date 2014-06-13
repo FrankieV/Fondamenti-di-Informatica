@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1402530121 source:c:\users\frankv\desktop\project\puntatori\main.cpp
+	<iostream>
+	<cstring>
+
