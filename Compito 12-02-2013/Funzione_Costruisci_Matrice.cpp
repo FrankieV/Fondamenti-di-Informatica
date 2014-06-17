@@ -16,6 +16,7 @@ int init_matrix( int ** M, int n, int m)
 				}
 		}
 }
+
 int costruisci_matrice ( int ** M, int ** S, int n, int m)
 {
 	int somma = 0;
@@ -50,6 +51,7 @@ void stampa_matrice( int ** S, int n, int m)
 		}
 	
 }
+
 int main() 
 {
 	int a,b;
