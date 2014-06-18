@@ -11,16 +11,16 @@ bool palindroma( int D[], int dim)
 		{
 			if( *Dptr_iniziale != *Dptr_finale)
 				return false;
-			*Dptr_iniziale++; 
+			*Dptr_iniziale++;
 			*Dptr_finale--;
 		}
 	return true;
 }
 
-int main() 
-{	
+int main()
+{
 	const int dim = 6;
-	int D[dim] = { 1, 2, 3, 3, 2, 1};
+	int D[dim] = { 1, 2, 4, 3, 2, 1};
 	if (palindroma( D, dim))
 		cout << "Palindroma";
 	else

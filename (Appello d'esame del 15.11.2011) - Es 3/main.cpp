@@ -29,85 +29,108 @@ void init_Cornici(int M[][N])
 
 bool Cornici_decr(int M [][N])
 {
-    int posI = 0;
-    int posJ = 0;
-    int A[N*N] = {-1};
-    int pos = 0;
-    int tmp[N*N] = {-1};
+    int pos_I = 0;
+    int pos_J = 0;
+    int A[N*N] = {0};
+    int temp[N*N] = {0};
+    int index = 0;
     int cont = 0;
     bool prima_volta = true;
 
-    while(posI != N/2 && posJ != N/2)
+    while(pos_I < N/2 && pos_J < N/2)
     {
-        for(int j = 0; j<N-cont; j++)
+        for(int i = 0; i < N*N; i++)
         {
-            A[pos] = M[posI][j];
-            pos++;
-            posJ++;
+            A[i] = 0;
         }
 
-        for(int i = posI; i<N-cont; i++)
+        for(int j = pos_J; j < N -index; j++)
         {
-            A[pos] = M[i][posJ-1];
-            pos++;
-            posI++;
+            A[cont] = M[pos_I][j];
+            cont++;
         }
 
-        for(int j = posJ; j>=cont; j--)
+        for(int i = pos_I; i < N -index; i++)
         {
-            A[pos] = M[posI-1][j];
-            pos++;
-            posJ--;
+            A[cont] = M[i][pos_J];
+            cont++;
         }
 
-        for(int i = posI; i>=cont; i--)
+        for(int i = pos_I; i < (N-1)-index; i++)
         {
-            A[pos] = M[i][posJ+1];
-            pos++;
-            posI--;
+            A[cont] = M[i][(N-1)-index];
+            cont++;
+        }
+
+        for(int j = (N-1)-index ; j > 0; j--)
+        {
+            A[cont] = M[(N-1)-index][j];
+            cont++;
         }
 
         if(prima_volta)
         {
             for(int i = 0; i < N*N; i++)
             {
-                tmp[i] = A[i];
-                prima_volta = false;
+                temp[i] = A[i];
             }
+            prima_volta = false;
         }
-
-            for(int i = 0; i < N*N; i++)
-            {
-                cout << A[i];
-            }
-
-//        else
-//        {
+        else
+        {
 //            for(int i = 0; i < N*N; i++)
 //            {
-//                for(int j = 0; j < N*N; j++)
-//                {
-//                    while(A[i] != -1)
-//                    {
-//                        if(A[i] > tmp[i])
-//                        {
-//                            return false;
-//                        }
-//                    }
-//                }
+//                cout << " " << A[i];
 //            }
+//
+//            cout << endl;
 //
 //            for(int i = 0; i < N*N; i++)
 //            {
-//                tmp[i] = A[i];
+//                cout << " " << temp[i];
 //            }
-//        }
 
-        cont++;
-        posI++;
-        posJ++;
-        pos = 0;
+            for(int i = 0; i < N*N; i++)
+            {
+                for(int j = 0; j < N*N; j++)
+                {
+                    if(A[i] != 0 && temp[j] != 0)
+                    {
+                        if(A[i] >= temp[j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            for(int i = 0; i < N*N; i++)
+            {
+                temp[i] = 0;
+            }
+
+
+            for(int i = 0; i < N*N; i++)
+            {
+                temp[i] = A[i];
+            }
+        }
+
+        index++;
+        pos_I++;
+        pos_J++;
+        cont = 0;
+    }
+
+    for(int i = 0; i < N*N; i++)
+    {
+        if(temp[i] != 0)
+        {
+            if(temp[i] <= M[N/2][N/2])
+                return false;
+        }
     }
 
     return true;
+
 }

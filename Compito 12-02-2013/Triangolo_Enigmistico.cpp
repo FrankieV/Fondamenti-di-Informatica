@@ -7,12 +7,12 @@ void stampa( char *Parola)
 	cout << Parola << endl;
 	for( int i = 0; i < strlen ( Parola); i++)
 		{
-			Parola[i] = *" ";
+			Parola[i] = ' ';
 			cout << Parola << endl;
 		}
 }
-int main() 
-{	
+int main()
+{
 	int dim = 100;
 	char parola[dim];
 	cin.getline( parola, dim);
