@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
 
 bool numero_oblungo( int numero, unsigned &n, int cont)
@@ -41,7 +40,7 @@ int main()
 	cin >> numero;
 	if( numero_oblungo( numero, n, cont))
 		{
-			cout << "Il numero e' oblungo " << n << " lo dimostra" << endl << endl;
+			cout << "Il numero e' oblungo " << n << "*" << "(" << n << "+ 1) " << " lo dimostra" << endl << endl;
 			init_matrix( n);
 		}
 	else
