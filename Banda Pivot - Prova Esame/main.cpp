@@ -1,85 +1,77 @@
 #include <iostream>
 
 using namespace std;
-const int m = 4;
-const int n = 5;
-void LeggiMatrice(int[][n]);
-int BandaPivot(int[][n]);
-void BandaOrizzontale(int[][n],int&,int[],int&);
+const int righe = 6;
+const int colonne = 7;
+void LeggiMatrice(int[][colonne]);
+void BandaOrizzontale(int[][colonne]);
 
 
 int main()
 {
-    int M[m][n];
-    int dimV = 0;
-    int V[n];
+    int M[righe][colonne];
     LeggiMatrice(M);
-    int pivot = BandaPivot(M);
-    int index = pivot;
-    BandaOrizzontale(M,dimV,V,index);
-
-    cout << V[0];
-
+    BandaOrizzontale(M);
 
 }
 
-void LeggiMatrice(int M[][n])
+void LeggiMatrice(int M[][colonne])
 {
-    for(int i=0; i<m; i++)
+    for(int i=0; i<righe; i++)
     {
-        for(int j=0; j<n; j++)
+        for(int j=0; j<colonne; j++)
         {
             cin >> M[i][j];
         }
     }
 }
 
-int BandaPivot(int M[][n])
+void BandaOrizzontale(int M[][colonne])
 {
-    bool procedi = true;
-    int indice = 1;
-    while(indice < m)
-    {
-        for(int i=0; i<n; i++)
-        {
-            if(M[0][i] != M[indice][i])
-            {
-                procedi = false;
-            }
-        }
-        if(procedi)
-        {
-            indice++;
-        }
-        else
-            return indice;
-    }
-    return indice;
-}
+    int A[righe];
+    bool diversi = false;
+    int pos_I = 1;
+    int cont = 0;
+    int dim_Bande = 1;
+    int dimensioni_bande[righe] = {0};
 
-void BandaOrizzontale(int M[][n],int& dimV,int V[],int &index)
-{
-    int contatore = 1;
-    bool procedi = true;
-    while(index < m-1)
+    for(int j = 0; j < colonne; j++)
     {
-        for(int i=0;i<n;i++)
+        A[j] = M[0][j];
+    }
+
+    while(pos_I < righe)
+    {
+        for(int j=0; j<colonne; j++)
         {
-            if(M[index][i] != M[index+1][i])
+            if(M[pos_I][j] != A[j])
             {
-                procedi = false;
+                diversi = true;
             }
         }
-        if(procedi)
+
+        if(diversi)
         {
-            contatore++;
-            index++;
-            BandaOrizzontale(M,dimV,V,index);
+            for(int j = 0; j < colonne; j++)
+            {
+                A[j] = M[pos_I][j];
+            }
+
+            diversi = false;
+            dimensioni_bande[cont] = dim_Bande;
+            cont++;
+            dim_Bande = 0;
         }
-        else
-        {
-            dimV++;
-            V[dimV] = contatore;
-        }
+
+        pos_I++;
+        dim_Bande++;
+
+    }
+
+    dimensioni_bande[cont] = dim_Bande;
+
+    for(int j = 0; j < righe; j++)
+    {
+        cout << dimensioni_bande[j];
     }
 }

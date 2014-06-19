@@ -26,7 +26,6 @@ int main()
         {
             cout << matrice[i][j];
         }
-
         cout << endl;
     }
 

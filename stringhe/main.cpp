@@ -8,7 +8,7 @@ int main()
 {
     const int dim = 20;
     char A[dim];
-    char F[];
+//    char F[];
 
     cin.getline(A,dim);
 
@@ -68,16 +68,26 @@ int main()
 //    char D[strlen(C)];
 //    strcpy(D,C);
 //    cout << D;
+
+
+
+
+
+
+
     char C[15] = "salve a tutti";
-    char *token = strtok(C," ");
+    char *token = strtok((C+3)," ");
     while(token != NULL)
     {
         cout << token << endl;
         token = strtok(NULL," ");
     }
 
-    int delim = '\0';  // IL VALORE di \0 è zero.
-    cout << delim;
+//    int delim = '\0';  // IL VALORE di \0 è zero.
+//    cout << delim;
+
+
+
 
 
 
