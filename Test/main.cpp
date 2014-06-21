@@ -1,18 +1,19 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
+const int dim = 10;
 
 int main()
 {
+    int * A[10];
+    for(int i =0; i<10; i++)
+        A[i]=new int [15];
 
-int A[5] = {4,2,24,33,2};
-int *p = A;
-int somma = 0;
 
-while(p == A)
-{
-    somma+= *p;
-    p++;
-}
+delete [] A;
+
+cout << sizeof(A);
+
 
 }
