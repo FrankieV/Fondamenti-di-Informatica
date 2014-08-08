@@ -29,12 +29,20 @@ bool Controlla_Posizioni_Libere( int **Matrice, int dim_Matrice, int &cont)
 
 void Stampa_Matrice( int **Matrice, int dim_Matrice)
 {
+    cout << "    ";
+    for( int i = 0; i < dim_Matrice; i++)
+        cout << i << " ";
+    cout << endl << endl;
+
+
     for( int i = 0; i < dim_Matrice; i++)
         {
+            cout << i << "   ";
             for( int j = 0; j < dim_Matrice; j++)
                 cout << Matrice[i][j] << " ";
             cout << endl;
         }
+    cout << endl;
 }
 
 bool Controlla_Riga( int **Matrice, int dim_Matrice, int numero, int i)
@@ -43,7 +51,8 @@ bool Controlla_Riga( int **Matrice, int dim_Matrice, int numero, int i)
         {
             if( Matrice[i][j] == numero)
                 {
-                    cout << "Numero gia' presente nella riga " << i << endl;
+                    cout << " ATTENZIONE !!! " << endl << endl;
+                    cout << " Numero gia' presente nella riga " << i << endl << endl;
                     return false;
                 }
         }
@@ -56,7 +65,8 @@ bool Controlla_Colonna( int **Matrice, int dim_Matrice, int numero, int j)
         {
             if( Matrice[i][j] == numero)
                 {
-                    cout << "Numero gia' presente nella colonna " << j << endl;
+                    cout << " ATTENZIONE !!! " << endl << endl;
+                    cout << " Numero gia' presente nella colonna " << j << endl << endl;
                     return false;
                 }
         }
@@ -71,9 +81,10 @@ bool Controlla_Sottomatrice( int **Matrice, int numero, int i_iniziale, int i_fi
                {
                     if( numero == Matrice[i][j])
                         {
-                            cout << "Numero gia' presente nella sottomatrice che va dall'indice riga: " << i_iniziale << endl;
-                            cout << "all' indice riga: " << i_finale << endl;
-                            cout << "E dall' indice colonna: " << j_iniziale << " all' indice colonna: " << j_finale << endl;
+                            cout << " ATTENZIONE !!! " << endl << endl;
+                            cout << " Numero gia' presente nella sottomatrice che va dall'indice riga: " << i_iniziale << endl;
+                            cout << " all' indice riga: " << i_finale << endl << endl;
+                            cout << " E dall' indice colonna: " << j_iniziale << " all' indice colonna: " << j_finale << endl << endl;
                             return false;
                         }
                }
@@ -150,13 +161,21 @@ int main()
     while( Controlla_Posizioni_Libere( Matrice, dim_Matrice, cont) == true)
         {
             Stampa_Matrice( Matrice, dim_Matrice);
-            cout << "Vi sono " << cont << " celle da riempire.";
-            cout << " Quale posizione intendi riempire ? " << endl;
-            cin >> i >> j;
+            cout << " Vi sono " << cont << " celle da riempire.";
+            cout << endl << endl;
+            cout << " Quale posizione intendi riempire ? " << endl << endl;;
+            cout << " Indice riga: ";
+            cin >> i;
+            cout << endl;
+            cout << " Indice colonna: ";
+            cin >> j;
+            cout << endl;
             if( Matrice[i][j] == 0)
                 {
-                    cout << " Con quale numero? " << endl;
+                    cout << " Con quale numero? " << endl << endl;
+                    cout << " Numero: ";
                     cin >> numero;
+                    cout << endl;
                     if( Controlla_Riga ( Matrice, dim_Matrice, numero, i))
                         {
                             if( Controlla_Colonna( Matrice, dim_Matrice, numero, j))
@@ -169,7 +188,7 @@ int main()
                         }
                 }
             else
-                cout << "Posizione gia' occupata da: " << Matrice[i][j] << endl;
+                cout << " Posizione gia' occupata da: " << Matrice[i][j] << endl << endl;
 
         }
     return 0;
