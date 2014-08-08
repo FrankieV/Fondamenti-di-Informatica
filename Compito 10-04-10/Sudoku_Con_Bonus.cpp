@@ -68,13 +68,15 @@ bool Controlla_Sottomatrice( int **Matrice, int numero, int i_iniziale, int i_fi
     for( int i = i_iniziale; i < i_finale; i++)
         {
             for( int j = j_iniziale; j < j_finale; j++)
-                if( numero == Matrice[i][j])
-                    {
-                        cout << "Numero gia' presente nella sottomatrice che va dall'indice riga: " << i_iniziale << endl;
-                        cout << "all' indice riga: " << i_finale << endl;
-                        cout << "E dall' indice colonna: " << j_iniziale << " all' indice colonna: " << j_finale << endl;
-                        return false;
-                    }
+               {
+                    if( numero == Matrice[i][j])
+                        {
+                            cout << "Numero gia' presente nella sottomatrice che va dall'indice riga: " << i_iniziale << endl;
+                            cout << "all' indice riga: " << i_finale << endl;
+                            cout << "E dall' indice colonna: " << j_iniziale << " all' indice colonna: " << j_finale << endl;
+                            return false;
+                        }
+               }
         }
     return true;
 }
@@ -167,9 +169,8 @@ int main()
                         }
                 }
             else
-                cout << "Posizione gia' occupata da :" << Matrice[i][j] << endl;
+                cout << "Posizione gia' occupata da: " << Matrice[i][j] << endl;
 
         }
-    Scansione_Indici( i, j, i_iniziale, i_finale, j_iniziale, j_finale, dim_Matrice);
     return 0;
 }
