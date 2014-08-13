@@ -16,7 +16,6 @@ void Init_Matrice( int **A, int N, int M)
 
 bool Striscia_Di_Demarcazione( int **A, int N, int M)
 {
-    bool Striscia_Di_Demarcazione = true;
     int riga = 0;
     int colonna = 0;
     bool Settore_Inferiore = false;
